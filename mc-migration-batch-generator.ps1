@@ -283,8 +283,8 @@ if($migrationbatches -gt 1)
 Write-Host 'All '$forend' migration batches have been exported into '$global:exportlocation -BackgroundColor DarkGreen -ForegroundColor White
 }
 
-#MCIntro
-#title
-#Load-ExchangeModules
-#Load-MailboxStatistics
+MCIntro
+title
+Load-ExchangeModules
+Load-MailboxStatistics
 Schedule-Batches
