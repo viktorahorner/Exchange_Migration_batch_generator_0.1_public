@@ -280,7 +280,7 @@ if($migrationbatches -gt 1)
     {
         $migrationbatch[$singlebatch]| ConvertTo-Csv -Delimiter ';' | Out-File ($global:exportlocation+'Migrationbatch_'+($singlebatch+1)+'.csv')
     }
-Write-Host 'All '$forend' migration batches have been exported into '$global:exportlocation -BackgroundColor DarkGreen -ForegroundColor White
+Write-Host 'All '$migrationbatches' migration batches have been exported into '$global:exportlocation -BackgroundColor DarkGreen -ForegroundColor White
 }
 
 MCIntro
