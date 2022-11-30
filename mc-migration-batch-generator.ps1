@@ -1,6 +1,6 @@
 #Name: Exchange Migration batch generator
-#Autor: Viktor Ahorner
-#Webside: blog.mccloud.cloud
+#Author: Viktor Ahorner
+#Web: blog.mccloud.cloud
 #Version: 0.1 public
 
 # SCRIPT COnfiguration
