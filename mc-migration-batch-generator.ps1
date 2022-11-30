@@ -1,4 +1,4 @@
-﻿#Name: Exchange Migration batch generator
+#Name: Exchange Migration batch generator
 #Autor: Viktor Ahorner
 #Webside: blog.mccloud.cloud
 #Version: 0.1 public
@@ -220,19 +220,13 @@ $batchtotal = 0                                            #Set total batchsize 
                 {
                     #$counter +=1
                     $subsum += $mailbox_schedule[$mailbox_schedule.count - 1].TotalItemSIze
-                    #Start-Sleep -Seconds 5             #debugging line
                     Write-Host 'Scheduling '$($mailbox_schedule[$mailbox_schedule.count - $counter]) -ForegroundColor Cyan
                     $tempbatch +=$mailbox_schedule[$mailbox_schedule.count - 1]
-                    #Start-Sleep -Seconds 5
-                    #Write-Host 'Counter is now '$counter -BackgroundColor Magenta     #debugging line
                     Write-Host 'Remove '$mailbox_schedule[$mailbox_schedule.count - 1]' from collection' -ForegroundColor DarkYellow
                     try
                     {
 
                    $mailbox_schedule.Removeat($mailbox_schedule.count - 1)
-                   #Write-Host 'Removed '$mailbox_schedule[$mailbox_schedule.count - $counter]' from collection' -ForegroundColor DarkCyan
-
-                  #$counter +=1
                   }
                    catch
                    {
@@ -242,9 +236,6 @@ $batchtotal = 0                                            #Set total batchsize 
         try
         {
         $mailbox_schedule.Remove($mailbox_schedule[$Mailbox])
-        #$mailbox_schedule.RemoveAt($Mailbox)
-        #Write-Host 'Remove '$mailbox_schedule[$Mailbox]' from collection' -ForegroundColor DarkCyan
-        #Start-Sleep -Seconds 10 -Verbose
         }
         catch
         {
@@ -259,10 +250,6 @@ $batchtotal = 0                                            #Set total batchsize 
         break
         }
     }
-    #$tempbatch = $tempbatch | sort -Unique
-
-        #Write-Host 'Adding '$tempbatch.count' items to mainbatch' -BackgroundColor DarkGray
-        #Start-Sleep -Seconds 10 
         $batchamount = $migrationbatch.Add($tempbatch)
  
 }
