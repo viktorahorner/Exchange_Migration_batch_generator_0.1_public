@@ -5,7 +5,7 @@
 
 # SCRIPT COnfiguration
 $global:exportlocation = 'C:\temp\' #Store-Location for Export and Import
-[long]$global:dayliimit = 500000000000 #Data-Transferlimit per batchjob in bytes > Actual size is 500GB per batchjob, it requires upload speed of around 35MBit/s
+[long]$global:weeklimit = 500000000000 #Data-Transferlimit per batchjob in bytes > Actual size is 500GB per week, it requires upload speed of around 35MBit/s
 #----------------------
 function MCIntro()
 {
